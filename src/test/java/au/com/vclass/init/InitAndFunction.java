@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class InitAndFunction {
 
-	public final String web = "http://192.168.1.23/git/WebApp/web/cviewer5.html";
+	public final String web = "http://192.168.1.32/git/WebApp/web/cviewer5.html";
 	//public final String web = "http://localhost/WebApp/WebApp/web/cviewer5.html";
 	public final String chromeDriverPath = "/usr4/workspace4test/Seleniumtests/chromedriver";
 	
