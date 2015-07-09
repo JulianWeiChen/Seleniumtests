@@ -20,9 +20,9 @@ import au.com.vclass.init.InitAndFunction;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class SignInTest {
+public class OldSignInTest {
 	private static WebDriver driver;
-	private static ExtentReports logger = ExtentReports.get(SignInTest.class);
+	private static ExtentReports logger = ExtentReports.get(OldSignInTest.class);
 	static InitAndFunction i = new InitAndFunction();
 
 	@BeforeTest
