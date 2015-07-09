@@ -29,6 +29,7 @@ public class SignInTest {
 		String testName = "Sign In with Invalid Info";
 		InitLog(testName);
 		IAmReady();
+
 		// Thread Wait
 		Thread.sleep(2000);
 
@@ -67,8 +68,7 @@ public class SignInTest {
 					+ initF.failIcon);
 		}
 
-		// Maximize Window
-		webDriver.manage().window().maximize();
+		
 
 	}
 
@@ -286,6 +286,8 @@ public class SignInTest {
 			e.printStackTrace();
 			logger.log(LogStatus.ERROR, "Thread Exception!");
 		}
+		// Maximize Window
+		webDriver.manage().window().maximize();
 	}
 
 	private static void IAmReady() {
