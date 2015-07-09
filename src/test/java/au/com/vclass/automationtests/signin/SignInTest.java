@@ -260,7 +260,7 @@ public class SignInTest {
 		Date date = new Date();
 		formatter = new SimpleDateFormat("yyMMddHHmmss");
 		time = formatter.format(date);
-		logger.init("/testreport/SignInTest-"+time+".html", true);
+		logger.init("./testreport/SignInTest-"+time+".html", true);
 	}
 	
 	@AfterTest
