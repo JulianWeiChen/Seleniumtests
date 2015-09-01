@@ -1,171 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="10" passed="10">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="298911" started-at="2015-07-08T06:58:04Z" finished-at="2015-07-08T07:03:03Z">
+  <suite name="au.com.vclass.automationtests.signin.SignInTest" duration-ms="83359" started-at="2015-08-31T15:03:20Z" finished-at="2015-08-31T15:04:44Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="298911" started-at="2015-07-08T06:58:04Z" finished-at="2015-07-08T07:03:03Z">
-      <class name="au.com.vclass.automationtests.CombineTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="beforeTest" is-config="true" duration-ms="21188" started-at="2015-07-08T16:58:04Z" finished-at="2015-07-08T16:58:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:au.com.vclass.automationtests.NewTest@6df97b55]" name="beforeTest" is-config="true" duration-ms="30261" started-at="2015-07-08T16:58:25Z" finished-at="2015-07-08T16:58:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="beforeTest" is-config="true" duration-ms="13" started-at="2015-07-08T16:58:55Z" finished-at="2015-07-08T16:58:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="beforeTest" is-config="true" duration-ms="7" started-at="2015-07-08T16:58:55Z" finished-at="2015-07-08T16:58:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="penThickness()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="penThickness" duration-ms="30764" started-at="2015-07-08T16:58:55Z" finished-at="2015-07-08T16:59:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- penThickness -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T16:58:55Z" finished-at="2015-07-08T16:58:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-08T16:59:26Z" finished-at="2015-07-08T16:59:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="penColor()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="penColor" duration-ms="6203" started-at="2015-07-08T17:00:27Z" finished-at="2015-07-08T17:00:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- penColor -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:00:27Z" finished-at="2015-07-08T17:00:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:00:33Z" finished-at="2015-07-08T17:00:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:01:35Z" finished-at="2015-07-08T17:01:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="pageNavigation()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="pageNavigation" duration-ms="12637" started-at="2015-07-08T17:01:35Z" finished-at="2015-07-08T17:01:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pageNavigation -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:01:48Z" finished-at="2015-07-08T17:01:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="zoomAndScale()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="zoomAndScale" duration-ms="20840" started-at="2015-07-08T17:02:23Z" finished-at="2015-07-08T17:02:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- zoomAndScale -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:02:23Z" finished-at="2015-07-08T17:02:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:02:43Z" finished-at="2015-07-08T17:02:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:au.com.vclass.automationtests.CombineTest@77b52d12]" name="afterTest" is-config="true" duration-ms="10508" started-at="2015-07-08T17:02:43Z" finished-at="2015-07-08T17:02:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:au.com.vclass.automationtests.NewTest@6df97b55]" name="afterTest" is-config="true" duration-ms="8903" started-at="2015-07-08T17:02:54Z" finished-at="2015-07-08T17:03:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="afterTest" is-config="true" duration-ms="1" started-at="2015-07-08T17:03:03Z" finished-at="2015-07-08T17:03:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-07-08T17:03:03Z" finished-at="2015-07-08T17:03:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- au.com.vclass.automationtests.CombineTest -->
+    <test name="Command line test" duration-ms="83359" started-at="2015-08-31T15:03:20Z" finished-at="2015-08-31T15:04:44Z">
       <class name="au.com.vclass.automationtests.signin.SignInTest">
-        <test-method status="PASS" signature="signInWithInvalidInfo()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="signInWithInvalidInfo" duration-ms="23164" started-at="2015-07-08T16:59:28Z" finished-at="2015-07-08T16:59:52Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="beforeTest" is-config="true" duration-ms="169" started-at="2015-09-01T01:03:20Z" finished-at="2015-09-01T01:03:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="signInWithInvalidInfo()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="signInWithInvalidInfo" duration-ms="27326" started-at="2015-09-01T01:03:21Z" finished-at="2015-09-01T01:03:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signInWithInvalidInfo -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T16:59:28Z" finished-at="2015-07-08T16:59:28Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-09-01T01:03:21Z" finished-at="2015-09-01T01:03:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="afterMethod" is-config="true" duration-ms="6396" started-at="2015-07-08T16:59:52Z" finished-at="2015-07-08T16:59:58Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="afterMethod" is-config="true" duration-ms="2680" started-at="2015-09-01T01:03:48Z" finished-at="2015-09-01T01:03:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="signInWithValidInfo()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="signInWithValidInfo" duration-ms="23962" started-at="2015-07-08T17:00:33Z" finished-at="2015-07-08T17:00:57Z">
+        <test-method status="PASS" signature="signInWithValidInfo()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="signInWithValidInfo" duration-ms="23332" started-at="2015-09-01T01:03:51Z" finished-at="2015-09-01T01:04:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signInWithValidInfo -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:00:33Z" finished-at="2015-07-08T17:00:33Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-09-01T01:03:51Z" finished-at="2015-09-01T01:03:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="afterMethod" is-config="true" duration-ms="3649" started-at="2015-07-08T17:00:57Z" finished-at="2015-07-08T17:01:01Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="afterMethod" is-config="true" duration-ms="2650" started-at="2015-09-01T01:04:14Z" finished-at="2015-09-01T01:04:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:01:48Z" finished-at="2015-07-08T17:01:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="signInRemMe()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="signInRemMe" duration-ms="31467" started-at="2015-07-08T17:01:48Z" finished-at="2015-07-08T17:02:19Z">
+        <test-method status="PASS" signature="signInRemMe()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="signInRemMe" duration-ms="24439" started-at="2015-09-01T01:04:17Z" finished-at="2015-09-01T01:04:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signInRemMe -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@34b7bfc0]" name="afterMethod" is-config="true" duration-ms="3509" started-at="2015-07-08T17:02:19Z" finished-at="2015-07-08T17:02:23Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-09-01T01:04:17Z" finished-at="2015-09-01T01:04:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="afterMethod" is-config="true" duration-ms="2650" started-at="2015-09-01T01:04:41Z" finished-at="2015-09-01T01:04:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:au.com.vclass.automationtests.signin.SignInTest@77b52d12]" name="afterTest" is-config="true" duration-ms="0" started-at="2015-09-01T01:04:44Z" finished-at="2015-09-01T01:04:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
       </class> <!-- au.com.vclass.automationtests.signin.SignInTest -->
-      <class name="au.com.vclass.automationtests.NewTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.NewTest@6df97b55]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T16:59:26Z" finished-at="2015-07-08T16:59:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="meetingTest()[pri:0, instance:au.com.vclass.automationtests.NewTest@6df97b55]" name="meetingTest" duration-ms="2156" started-at="2015-07-08T16:59:26Z" finished-at="2015-07-08T16:59:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- meetingTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.NewTest@6df97b55]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-08T16:59:28Z" finished-at="2015-07-08T16:59:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- au.com.vclass.automationtests.NewTest -->
-      <class name="au.com.vclass.automationtests.SignInTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T16:59:58Z" finished-at="2015-07-08T16:59:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="signInWithValidInfo()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="signInWithValidInfo" duration-ms="25818" started-at="2015-07-08T16:59:58Z" finished-at="2015-07-08T17:00:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signInWithValidInfo -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="afterMethod" is-config="true" duration-ms="3395" started-at="2015-07-08T17:00:24Z" finished-at="2015-07-08T17:00:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="signInWithInvalidInfo()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="signInWithInvalidInfo" duration-ms="28760" started-at="2015-07-08T17:01:01Z" finished-at="2015-07-08T17:01:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signInWithInvalidInfo -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2015-07-08T17:01:01Z" finished-at="2015-07-08T17:01:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:au.com.vclass.automationtests.SignInTest@366e2eef]" name="afterMethod" is-config="true" duration-ms="5281" started-at="2015-07-08T17:01:30Z" finished-at="2015-07-08T17:01:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- au.com.vclass.automationtests.SignInTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- Command line suite -->
+  </suite> <!-- au.com.vclass.automationtests.signin.SignInTest -->
 </testng-results>

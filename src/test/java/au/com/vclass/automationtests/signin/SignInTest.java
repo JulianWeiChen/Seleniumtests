@@ -258,13 +258,14 @@ public class SignInTest {
 		String time;
 		DateFormat formatter;
 		Date date = new Date();
-		formatter = new SimpleDateFormat("yyMMddHHmmss");
+		formatter = new SimpleDateFormat("yyMMdd");
 		time = formatter.format(date);
 		logger.init("./testreport/SignInTest-"+time+".html", true);
 	}
 	
 	@AfterTest
 	public void afterTest() {
+		
 		
 	}
 

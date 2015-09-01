@@ -3,15 +3,16 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="au.com.vclass.automationtests.CombineTest">
+      <class name="au.com.vclass.automationtests.signin.SignInTest">
         <methods>
-          <include name="penColor"/>
-          <include name="penThickness"/>
-          <include name="zoomAndScale"/>
+          <include name="signInWithInvalidInfo"/>
+          <include name="signInWithValidInfo"/>
+          <include name="beforeMethod"/>
           <include name="beforeTest"/>
-          <include name="pageNavigation"/>
+          <include name="afterMethod"/>
+          <include name="signInRemMe"/>
         </methods>
-      </class> <!-- au.com.vclass.automationtests.CombineTest -->
+      </class> <!-- au.com.vclass.automationtests.signin.SignInTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
