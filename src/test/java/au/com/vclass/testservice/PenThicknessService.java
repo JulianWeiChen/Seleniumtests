@@ -1,17 +1,18 @@
 package au.com.vclass.testservice;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import au.com.vclass.init.InitAndFunction;
+import au.com.vclass.constants.TestConstants;
+import au.com.vclass.util.DrawUtil;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class PenThicknessService {
-	
-	public void penThickness(WebDriver driver, ExtentReports logger, InitAndFunction i) throws InterruptedException {
+
+	public static void PenThickness(WebDriver driver, ExtentReports logger)
+			throws InterruptedException {
 		Thread.sleep(2000);
 
 		logger.startTest("Pen thickness Tests Start");
@@ -22,7 +23,7 @@ public class PenThicknessService {
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL,
 					"failed to choose pen toggle(pen Thickness 1) "
-							+ i.failIcon);
+							+ TestConstants.FAIL_ICON);
 		}
 
 		Thread.sleep(2000);
@@ -31,17 +32,17 @@ public class PenThicknessService {
 			logger.log(LogStatus.INFO, "Chose pen Thickness 1");
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to choose pen Thickness 1 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 
 		Thread.sleep(2000);
 		try {
-			i.draw(driver, 40, 40, 100, 100);
+			DrawUtil.draw(driver, 40, 40, 100, 100);
 			logger.log(LogStatus.PASS, "Pass pen Thickness 1 tests "
-					+ i.successIcon);
+					+ TestConstants.SUCCESS_ICON);
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to draw with pen Thickness 1 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 
 		// Test pen thickness 2
@@ -52,7 +53,7 @@ public class PenThicknessService {
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL,
 					"failed to choose pen toggle(pen Thickness 2) "
-							+ i.failIcon);
+							+ TestConstants.FAIL_ICON);
 		}
 		Thread.sleep(2000);
 		try {
@@ -60,16 +61,16 @@ public class PenThicknessService {
 			logger.log(LogStatus.INFO, "Chose pen Thickness 2");
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to choose pen Thickness 2 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 		Thread.sleep(2000);
 		try {
-			i.draw(driver, 40, 40, 40, 100);
+			DrawUtil.draw(driver, 40, 40, 40, 100);
 			logger.log(LogStatus.PASS, "Pass pen Thickness 2 tests "
-					+ i.successIcon);
+					+ TestConstants.SUCCESS_ICON);
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to draw with pen Thickness 2 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 
 		// Test pen thickness 3
@@ -80,7 +81,7 @@ public class PenThicknessService {
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL,
 					"failed to choose pen toggle(pen Thickness 3) "
-							+ i.failIcon);
+							+ TestConstants.FAIL_ICON);
 		}
 		Thread.sleep(2000);
 		try {
@@ -88,16 +89,16 @@ public class PenThicknessService {
 			logger.log(LogStatus.INFO, "Chose pen Thickness 3");
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to choose pen Thickness 3 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 		Thread.sleep(2000);
 		try {
-			i.draw(driver, 40, 100, 100, 100);
+			DrawUtil.draw(driver, 40, 100, 100, 100);
 			logger.log(LogStatus.PASS, "Pass pen Thickness 3 tests "
-					+ i.successIcon);
+					+ TestConstants.SUCCESS_ICON);
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to draw with pen Thickness 3 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 
 		// Test pen thickness 4
@@ -108,7 +109,7 @@ public class PenThicknessService {
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL,
 					"failed to choose pen toggle(pen Thickness 4) "
-							+ i.failIcon);
+							+ TestConstants.FAIL_ICON);
 		}
 		Thread.sleep(2000);
 		try {
@@ -116,16 +117,16 @@ public class PenThicknessService {
 			logger.log(LogStatus.INFO, "Chose pen Thickness 4");
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to choose pen Thickness 4 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 		Thread.sleep(2000);
 		try {
-			i.draw(driver, 40, 100, 100, 100);
+			DrawUtil.draw(driver, 40, 100, 100, 100);
 			logger.log(LogStatus.PASS, "Pass pen Thickness 4 tests "
-					+ i.successIcon);
+					+ TestConstants.SUCCESS_ICON);
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "failed to draw with pen Thickness 4 "
-					+ i.failIcon);
+					+ TestConstants.FAIL_ICON);
 		}
 
 		logger.endTest();

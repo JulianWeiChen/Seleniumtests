@@ -1,7 +1,5 @@
 package au.com.vclass.mailsend;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +12,6 @@ import main.java.au.com.vclass.mailmodule.sender.CommonMailSender;
 public class ReportSender {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// Send email to developers
 		String time;
 		DateFormat formatter;
