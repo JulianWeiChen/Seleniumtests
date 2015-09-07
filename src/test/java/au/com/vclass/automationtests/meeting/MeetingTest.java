@@ -13,16 +13,15 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import au.com.vclass.constants.TestConstants;
-import au.com.vclass.testservice.EraserService;
-import au.com.vclass.testservice.NavigatePageService;
-import au.com.vclass.testservice.PenColorService;
-import au.com.vclass.testservice.PenThicknessService;
-import au.com.vclass.testservice.SignInService;
-import au.com.vclass.testservice.TestInitService;
-import au.com.vclass.testservice.ZoomAndScaleService;
+import au.com.vclass.testservice.draw.EraserService;
+import au.com.vclass.testservice.draw.NavigatePageService;
+import au.com.vclass.testservice.draw.PenColorService;
+import au.com.vclass.testservice.draw.ZoomAndScaleService;
+import au.com.vclass.testservice.init.TestInitService;
+import au.com.vclass.testservice.meeting.MeetingTabService;
+import au.com.vclass.testservice.signin.SignInService;
 
 import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
 
 public class MeetingTest {
 	private WebDriver webDriver;
@@ -38,8 +37,9 @@ public class MeetingTest {
 		time = formatter.format(date);
 		logger.init("./testreport/MeetingTest-" + time + ".html", true);
 		
-		String testName = "Sign In with Valid Info";
-		webDriver = initSrv.initialize(testName, logger);
+		//String testName = "Sign In with Valid Info";
+		logger.startTest("Sign In with Valid Info");
+		webDriver = initSrv.initialize(logger);
 		// Thread Wait
 		Thread.sleep(2000);
 		TestInitService.IAmReady(logger, webDriver);
@@ -63,6 +63,23 @@ public class MeetingTest {
 												// shown
 		logger.endTest();
 
+	}	
+
+	@AfterTest
+	public void afterTest() throws InterruptedException {
+		// Thread Wait
+		Thread.sleep(2000);
+		String testName = "Sign off with valid info";
+		logger.startTest(testName);
+
+		// Log out
+		SignInService.SignOut(logger, webDriver);
+		
+		// Thread Wait
+		Thread.sleep(2000);
+
+		webDriver.quit();
+		logger.endTest();
 	}
 
 	@BeforeMethod
@@ -70,10 +87,19 @@ public class MeetingTest {
 
 	}
 
+	@AfterMethod
+	public void afterMethod() throws InterruptedException {
+		
+	}
+	
 	@Test(priority = 0)
 	public void scheduleMeeting() throws InterruptedException {
-		//PenThicknessService.PenThickness(webDriver, logger);
-
+		// Navigate to Meeting Tab
+		Thread.sleep(2000);
+		logger.startTest("Schedule Meeting Test Start");
+		MeetingTabService.MeetingTab(webDriver, logger);
+		
+		
 	}
 
 	@Test(priority = 1, enabled=false)
@@ -96,30 +122,4 @@ public class MeetingTest {
 		EraserService.Eraser(webDriver, logger);
 	}
 
-	@AfterMethod
-	public void afterMethod() throws InterruptedException {
-		
-	}
-
-	@AfterTest
-	public void afterTest() throws InterruptedException {
-		// Thread Wait
-		Thread.sleep(2000);
-		String testName = "Sign off with valid info";
-		logger.startTest(testName);
-
-		// Log out
-		SignInService.SignOut(logger, webDriver);
-		
-		// Thread Wait
-		Thread.sleep(2000);
-		// Check log out if successful
-		SignInService.CheckSignOut(logger, webDriver);
-		
-		// Thread Wait
-		Thread.sleep(2000);
-
-		webDriver.quit();
-		logger.endTest();
-	}
 }

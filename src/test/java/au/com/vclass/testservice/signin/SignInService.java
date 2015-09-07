@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.signin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

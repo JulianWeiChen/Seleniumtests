@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.init;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +11,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class TestInitService {
-	public WebDriver initialize(String testName, ExtentReports logger) {
-		logger.startTest(testName);
+	public WebDriver initialize(ExtentReports logger) {
+		//logger.startTest(testName);
 
 		// Open Chrome in a new session
 		System.setProperty("webdriver.chrome.driver",

@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.draw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -16,8 +16,6 @@ public class NavigatePageService {
 			throws InterruptedException {
 
 		Thread.sleep(2000);
-
-		logger.startTest("Page navigation Test");
 
 		// Next page
 		try {
@@ -79,7 +77,6 @@ public class NavigatePageService {
 					+ TestConstants.FAIL_ICON);
 		}
 
-		logger.endTest();
 
 	}
 

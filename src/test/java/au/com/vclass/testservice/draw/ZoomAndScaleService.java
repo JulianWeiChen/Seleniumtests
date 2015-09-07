@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.draw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,8 +17,7 @@ public class ZoomAndScaleService {
 		// Zoom in twice
 
 		Thread.sleep(2000);
-		logger.startTest("Zoom and Scale Test");
-
+		
 		WebElement elementZoomIn = null;
 		try {
 			elementZoomIn = driver.findElement(By.id("zoomIn"));
@@ -107,8 +106,6 @@ public class ZoomAndScaleService {
 			logger.log(LogStatus.FAIL, "Failed to choose 50% scale"
 					+ TestConstants.FAIL_ICON);
 		}
-
-		logger.endTest();
 
 	}
 

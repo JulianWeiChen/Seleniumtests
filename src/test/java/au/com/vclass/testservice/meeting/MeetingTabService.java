@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.meeting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,8 +15,6 @@ public class MeetingTabService {
 			throws InterruptedException {
 
 		WebElement element;
-		Thread.sleep(2000);
-		logger.startTest("Meeting Tests Start");
 		// Navigate to meeting tab
 		try {
 			driver.findElement(By.id("meetingsTabButton")).click();

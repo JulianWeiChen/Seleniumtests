@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.draw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,6 @@ public class PenColorService {
 			throws InterruptedException {
 
 		Thread.sleep(2000);
-		logger.startTest("Pen color Test");
 
 		// Choose Highlight Pen Thickness1 Toggle and Draw
 		try {
@@ -94,8 +93,6 @@ public class PenColorService {
 		} catch (Exception e) {
 			logger.log(LogStatus.FAIL, "Failed to draw with red pen");
 		}
-
-		logger.endTest();
 
 	}
 

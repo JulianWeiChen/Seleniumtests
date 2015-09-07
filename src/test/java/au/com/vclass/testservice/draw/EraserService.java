@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.draw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,6 @@ public class EraserService {
 			throws InterruptedException {
 
 		Thread.sleep(2000);
-		logger.startTest("Eraser Test");
 
 		// Eraser
 		try {
@@ -49,7 +48,6 @@ public class EraserService {
 					"Failed to clear the page"
 							+ TestConstants.FAIL_ICON);
 		}
-		
-		logger.endTest();
+
 	}
 }

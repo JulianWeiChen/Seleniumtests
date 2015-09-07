@@ -13,16 +13,15 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import au.com.vclass.constants.TestConstants;
-import au.com.vclass.testservice.EraserService;
-import au.com.vclass.testservice.NavigatePageService;
-import au.com.vclass.testservice.PenColorService;
-import au.com.vclass.testservice.PenThicknessService;
-import au.com.vclass.testservice.SignInService;
-import au.com.vclass.testservice.TestInitService;
-import au.com.vclass.testservice.ZoomAndScaleService;
+import au.com.vclass.testservice.draw.EraserService;
+import au.com.vclass.testservice.draw.NavigatePageService;
+import au.com.vclass.testservice.draw.PenColorService;
+import au.com.vclass.testservice.draw.PenThicknessService;
+import au.com.vclass.testservice.draw.ZoomAndScaleService;
+import au.com.vclass.testservice.init.TestInitService;
+import au.com.vclass.testservice.signin.SignInService;
 
 import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
 
 public class DrawTest {
 	private WebDriver webDriver;
@@ -38,8 +37,9 @@ public class DrawTest {
 		time = formatter.format(date);
 		logger.init("./testreport/DrawTest-" + time + ".html", true);
 		
-		String testName = "Sign In with Valid Info";
-		webDriver = initSrv.initialize(testName, logger);
+		//String testName = "Sign In with Valid Info";
+		logger.startTest("Sign In with Valid Info");
+		webDriver = initSrv.initialize(logger);
 		// Thread Wait
 		Thread.sleep(2000);
 		TestInitService.IAmReady(logger, webDriver);
@@ -65,42 +65,6 @@ public class DrawTest {
 
 	}
 
-	@BeforeMethod
-	public void beforeMethod() throws InterruptedException {
-
-	}
-
-	@Test(priority = 0)
-	public void penThickness() throws InterruptedException {
-		PenThicknessService.PenThickness(webDriver, logger);
-
-	}
-
-	@Test(priority = 1)
-	public void penColor() throws InterruptedException {
-		PenColorService.PenColor(webDriver, logger);
-	}
-
-	@Test(priority = 2)
-	public void pageNavigation() throws InterruptedException {
-		NavigatePageService.NavigatePage(webDriver, logger);
-	}
-
-	@Test(priority = 3)
-	public void zoomAndScale() throws InterruptedException {
-		ZoomAndScaleService.ZoomAndScale(webDriver, logger);
-	}
-	
-	@Test(priority = 4)
-	public void eraserAndClearPage() throws InterruptedException {
-		EraserService.Eraser(webDriver, logger);
-	}
-
-	@AfterMethod
-	public void afterMethod() throws InterruptedException {
-		
-	}
-
 	@AfterTest
 	public void afterTest() throws InterruptedException {
 		// Thread Wait
@@ -113,13 +77,55 @@ public class DrawTest {
 		
 		// Thread Wait
 		Thread.sleep(2000);
-		// Check log out if successful
-		SignInService.CheckSignOut(logger, webDriver);
-		
-		// Thread Wait
-		Thread.sleep(2000);
 
 		webDriver.quit();
 		logger.endTest();
 	}
+
+	@BeforeMethod
+	public void beforeMethod() throws InterruptedException {
+
+	}
+	
+	@AfterMethod
+	public void afterMethod() throws InterruptedException {
+		
+	}
+	
+	@Test(priority = 0)
+	public void penThickness() throws InterruptedException {
+		logger.startTest("Pen thickness Tests Start");
+		PenThicknessService.PenThickness(webDriver, logger);
+		logger.endTest();
+	}
+
+	@Test(priority = 1)
+	public void penColor() throws InterruptedException {
+		logger.startTest("Pen color Test");
+		PenColorService.PenColor(webDriver, logger);
+		logger.endTest();
+	}
+
+	@Test(priority = 2)
+	public void pageNavigation() throws InterruptedException {
+		logger.startTest("Page navigation Test");
+		NavigatePageService.NavigatePage(webDriver, logger);
+		logger.endTest();
+	}
+
+	@Test(priority = 3)
+	public void zoomAndScale() throws InterruptedException {
+		logger.startTest("Zoom and Scale Test");
+		ZoomAndScaleService.ZoomAndScale(webDriver, logger);
+		logger.endTest();
+	}
+	
+	@Test(priority = 4)
+	public void eraserAndClearPage() throws InterruptedException {
+		logger.startTest("Eraser Test Start");
+		EraserService.Eraser(webDriver, logger);
+		logger.endTest();
+	}
+
+
 }

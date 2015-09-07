@@ -12,8 +12,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import au.com.vclass.constants.TestConstants;
-import au.com.vclass.testservice.TestInitService;
-import au.com.vclass.testservice.SignInService;
+import au.com.vclass.testservice.init.TestInitService;
+import au.com.vclass.testservice.signin.SignInService;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
@@ -24,10 +24,46 @@ public class SignInTest {
 	private static ExtentReports logger = ExtentReports.get(SignInTest.class);
 	private TestInitService initSrv = new TestInitService();
 
+	@BeforeTest
+	public void beforeTest() {
+		String time;
+		DateFormat formatter;
+		Date date = new Date();
+		formatter = new SimpleDateFormat("yyMMdd");
+		time = formatter.format(date);
+		logger.init("./testreport/SignInTest-" + time + ".html", true);
+	}
+	
+	@AfterTest
+	public void afterTest() {
+
+	}
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		// logger.init("SignInTest.html", true);
+	}
+
+	@AfterMethod
+	public void afterMethod() {
+		try {
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.log(LogStatus.ERROR, "SignInTest AfterMethod Thread Exception!!!"
+					+ TestConstants.FAIL_ICON
+					+ TestConstants.FAIL_ICON + "\n" + e.getMessage());
+		}
+		webDriver.manage().deleteAllCookies();
+		webDriver.quit();
+		logger.endTest();
+	}
+	
 	@Test(priority = 0)
 	public void signInWithInvalidInfo() throws InterruptedException {
-		String testName = "Sign In with Invalid Info";
-		webDriver = initSrv.initialize(testName, logger);		
+		logger.startTest("Sign In with Invalid Info");
+		//String testName = "Sign In with Invalid Info";
+		webDriver = initSrv.initialize(logger);		
 		// Thread Wait
 		Thread.sleep(2000);		
 		TestInitService.IAmReady(logger, webDriver);
@@ -49,8 +85,9 @@ public class SignInTest {
 
 	@Test(priority = 1)
 	public void signInWithValidInfo() throws InterruptedException {
-		String testName = "Sign In with Valid Info";
-		webDriver = initSrv.initialize(testName, logger);
+		logger.startTest("Sign In with Valid Info");
+		//String testName = "Sign In with Valid Info";
+		webDriver = initSrv.initialize(logger);
 		// Thread Wait
 		Thread.sleep(2000);		
 		TestInitService.IAmReady(logger, webDriver);
@@ -87,8 +124,9 @@ public class SignInTest {
 
 	@Test(priority = 2)
 	public void signInRemMe() throws InterruptedException {
-		String testName = "Sign In and Remember Me";
-		webDriver = initSrv.initialize(testName, logger);
+		//String testName = "Sign In and Remember Me";
+		logger.startTest("Sign In and Remember Me");
+		webDriver = initSrv.initialize(logger);
 		// Thread Wait
 		Thread.sleep(2000);		
 		TestInitService.IAmReady(logger, webDriver);
@@ -123,38 +161,4 @@ public class SignInTest {
 		SignInService.CheckSignInAgain(logger, webDriver);		
 	}
 
-	@BeforeMethod
-	public void beforeMethod() {
-		// logger.init("SignInTest.html", true);
-	}
-
-	@AfterMethod
-	public void afterMethod() {
-		try {
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			e.printStackTrace();
-			logger.log(LogStatus.ERROR, "SignInTest AfterMethod Thread Exception!!!"
-					+ TestConstants.FAIL_ICON
-					+ TestConstants.FAIL_ICON + "\n" + e.getMessage());
-		}
-		webDriver.manage().deleteAllCookies();
-		webDriver.quit();
-		logger.endTest();
-	}
-
-	@BeforeTest
-	public void beforeTest() {
-		String time;
-		DateFormat formatter;
-		Date date = new Date();
-		formatter = new SimpleDateFormat("yyMMdd");
-		time = formatter.format(date);
-		logger.init("./testreport/SignInTest-" + time + ".html", true);
-	}
-
-	@AfterTest
-	public void afterTest() {
-
-	}
 }

@@ -1,4 +1,4 @@
-package au.com.vclass.testservice;
+package au.com.vclass.testservice.draw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,6 @@ public class PenThicknessService {
 			throws InterruptedException {
 		Thread.sleep(2000);
 
-		logger.startTest("Pen thickness Tests Start");
 		// Test pen thickness 1
 		try {
 			driver.findElement(By.id("normalPenToggle")).click();
@@ -128,9 +127,6 @@ public class PenThicknessService {
 			logger.log(LogStatus.FAIL, "failed to draw with pen Thickness 4 "
 					+ TestConstants.FAIL_ICON);
 		}
-
-		logger.endTest();
-
 	}
 
 }
