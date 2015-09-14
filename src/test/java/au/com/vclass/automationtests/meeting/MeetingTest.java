@@ -36,7 +36,6 @@ public class MeetingTest {
 		formatter = new SimpleDateFormat("yyMMdd");
 		time = formatter.format(date);
 		logger.init("./testreport/MeetingTest-" + time + ".html", true);
-		
 		//String testName = "Sign In with Valid Info";
 		logger.startTest("Sign In with Valid Info");
 		webDriver = initSrv.initialize(logger);
@@ -45,7 +44,6 @@ public class MeetingTest {
 		TestInitService.IAmReady(logger, webDriver);
 
 		// Thread Wait
-		Thread.sleep(2000);
 
 		// Sign In with Valid Testing Account
 		SignInService.SignIn(logger, webDriver,
@@ -53,7 +51,7 @@ public class MeetingTest {
 				TestConstants.VALID_PASSWORD, false);
 
 		// Thread Wait
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		// Check Sign In Successfully
 		SignInService.CheckSignIn(logger, webDriver, true);
@@ -98,10 +96,11 @@ public class MeetingTest {
 		Thread.sleep(2000);
 		logger.startTest("Schedule Meeting Test Start");
 		MeetingTabService.MeetingTab(webDriver, logger);
-		
-		
+		logger.startTest("Add a meeting");
+		Thread.sleep(2000);
+		MeetingTabService.AddMeeting(webDriver, logger);
 	}
-
+/*
 	@Test(priority = 1, enabled=false)
 	public void penColor() throws InterruptedException {
 		PenColorService.PenColor(webDriver, logger);
@@ -121,5 +120,5 @@ public class MeetingTest {
 	public void eraserAndClearPage() throws InterruptedException {
 		EraserService.Eraser(webDriver, logger);
 	}
-
+*/
 }

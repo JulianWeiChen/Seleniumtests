@@ -14,6 +14,7 @@ public class AccountTabService {
 	public static void AccountTab(WebDriver driver, ExtentReports logger) throws InterruptedException {
 		WebElement element;
 		Thread.sleep(2000);
+		
 		logger.startTest("Account Tests Start");
 		// Navigate to account tab
 		try {

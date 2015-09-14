@@ -5,7 +5,6 @@ public class TestConstants {
 	//public final String web = "http://localhost/WebApp/WebApp/web/cviewer5.html"
 	//public final String chromeDriverPath = "/chromedriver";
 	public static final String CHROME_DRIVER_PATH = "chromedriver";
-	
 	public static final String VALID_USER_NAME = "julian@vclass.com.au";
 	public static final String VALID_PASSWORD = "julianpw";
 	public static final String INVALID_USER_NAME = "julian@vclass.com";
