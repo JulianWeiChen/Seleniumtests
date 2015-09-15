@@ -1,4 +1,5 @@
-package au.com.vclass.automationtests.group;
+package au.com.vclass.automationtests.drive;
+
 
 import org.testng.annotations.Test;
 
@@ -8,6 +9,7 @@ import au.com.vclass.automationtests.meeting.MeetingTest;
 import au.com.vclass.constants.TestConstants;
 import au.com.vclass.testservice.init.TestInitService;
 import au.com.vclass.testservice.signin.SignInService;
+import au.com.vclass.testservice.drive.driveHelper;
 import au.com.vclass.testservice.group.*;
 
 import org.testng.annotations.BeforeTest;
@@ -21,7 +23,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 
 
-public class AddGroupTest {
+public class uploadFileTest {
 	private WebDriver webDriver;
 	private static ExtentReports logger = ExtentReports.get(MeetingTest.class);
 	private TestInitService initSrv = new TestInitService();
@@ -30,14 +32,12 @@ public class AddGroupTest {
   public void f() throws InterruptedException {
 	  GroupTabService.ManageTab(webDriver, logger);
 	  Thread.sleep(2000);
-	  logger.startTest("Start to Add Group");
-	  GroupTabService.AddGroup(webDriver, logger);
+	  logger.startTest("Navi to drive Tab");
+	  driveHelper.DriveTab(webDriver, logger);
 	  Thread.sleep(2000);
-	  logger.startTest("Start to Add User");
-	  GroupTabService.AddUser(webDriver, logger);
+	  logger.startTest("Start to upload file");
+	  driveHelper.allMyFile(webDriver, logger);
 	  Thread.sleep(1000);
-	  logger.startTest("Start to add user to group");
-	  GroupTabService.AddAndDeleteUserToGroup(webDriver, logger);
   }
   @BeforeTest
   public void beforeTest() throws ParseException, InterruptedException {
@@ -46,7 +46,7 @@ public class AddGroupTest {
 		Date date = new Date();
 		formatter = new SimpleDateFormat("yyMMdd");
 		time = formatter.format(date);
-		logger.init("./testreport/AddGroupTest-" + time + ".html", true);
+		logger.init("./testreport/uploadFileTest-" + time + ".html", true);
 		//String testName = "Sign In with Valid Info";
 		logger.startTest("Sign In with Valid Info");
 		webDriver = initSrv.initialize(logger);

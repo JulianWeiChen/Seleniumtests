@@ -65,7 +65,38 @@ public class GroupTabService {
 				if(rs.next()){
 					//rs.next();
 					autoTestGroupID = rs.getInt("gid");
-					logger.log(LogStatus.INFO, "Search DB successfully and found target" + TestConstants.SUCCESS_ICON);
+					logger.log(LogStatus.INFO, "Search DB successfully and found target Group" + TestConstants.SUCCESS_ICON);
+				}
+				else{
+					logger.log(LogStatus.FAIL, "Search DB unsuccessfully" + TestConstants.FAIL_ICON);
+				}
+				conn.close();
+			}catch(Exception e){
+				System.out.println(e.getMessage());
+			}
+			//*[@id="groupRowTemplate"]
+			driver.findElement(By.xpath("//*[@id='groupRowTemplate' and @data-group='" + autoTestGroupID + "']")).click();
+			logger.log(LogStatus.INFO, "Auto Test Group Entry found" + TestConstants.SUCCESS_ICON);
+			driver.findElement(By.xpath("//*[@id='groupRowTemplate' and @data-group='" + autoTestGroupID + "']/td[6]/div/button[1]")).click();
+			logger.log(LogStatus.INFO, "Edit Group Detail Button Clicked" + TestConstants.SUCCESS_ICON);
+			driver.findElement(By.xpath("//*[@id='editGroupRow']/td[2]/textarea")).sendKeys(" Auto Test Group Updated Text");
+			//*[@id="editGroupRow"]/td[6]/button
+			logger.log(LogStatus.INFO, "Update texts inputed " + TestConstants.SUCCESS_ICON);
+			driver.findElement(By.xpath("//*[@id='editGroupRow']/td[6]/button")).click();
+			logger.log(LogStatus.INFO, "Update button clicked, have to check with the DB for results " + TestConstants.SUCCESS_ICON);
+			try{
+				conn = DriverManager.getConnection("jdbc:mysql://192.168.1.23/vclass","root","hels2nk2");
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery("select * from groups where name = 'AutoTestGroup'");
+				if(rs.next()){
+					//rs.next();
+					String updatedDes = rs.getString("descr");
+					if(updatedDes.equals(" Auto Test Group Updated Tex")){
+						logger.log(LogStatus.INFO, "Updated Auto Test Group des Successfully" + TestConstants.SUCCESS_ICON);
+					}
+					else{
+						logger.log(LogStatus.FAIL, "Updated Auto Test Group des USuccessfully" + TestConstants.FAIL_ICON);
+					}
 				}
 				else{
 					logger.log(LogStatus.FAIL, "Search DB unsuccessfully" + TestConstants.FAIL_ICON);
@@ -93,16 +124,16 @@ public class GroupTabService {
 		driver.findElement(By.xpath("//*[@id='addUserRow']/td[7]/button")).click();
 		logger.log(LogStatus.INFO, "Added User to the Database" + TestConstants.SUCCESS_ICON);
 		Thread.sleep(2000);
-
-		//driver.findElement(By.xpath("//*[@id='userManagementTab']/div/div/div[12]/div[2]/div/div/button")).click();
-		driver.findElement(By.xpath("//*[@id='userManagementTab']/div/div/div[12]/div[2]/div/div")).click();
-
-		Thread.sleep(2000);
-		logger.log(LogStatus.INFO, "User filter clicked " + TestConstants.SUCCESS_ICON);
-		Thread.sleep(2000);
-
-		driver.findElement(By.xpath("//*[@id='userManagementTab']/div/div/div[12]/div[2]/div/div/div/ul/li[3]")).click();
-		logger.log(LogStatus.INFO, "Pending user selected" + TestConstants.SUCCESS_ICON);
+		/*
+		 * Select pending user or not??
+		 */
+		//driver.findElement(By.xpath("//*[@id='userManagementTab']//button[@data-toggle='dropdown' and @data-id='usersFilter']")).click();
+		//Thread.sleep(2000);
+		//logger.log(LogStatus.INFO, "User filter clicked " + TestConstants.SUCCESS_ICON);
+		//Thread.sleep(2000);
+		//driver.findElement(By.xpath("//*[@id='userManagementTab']//div[@class='btn-group bootstrap-select form-control open']//li[@data-original-index='2']/a")).click();
+		//logger.log(LogStatus.INFO, "Pending user selected" + TestConstants.SUCCESS_ICON);
+		
 		}catch(Exception e){
 			logger.log(LogStatus.FAIL, e.getMessage()+ TestConstants.FAIL_ICON);
 		}
@@ -123,6 +154,43 @@ public class GroupTabService {
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 		}
+		
+		/*
+		 * After Add user, Change user Email right way and check with DB
+		 */
+		driver.findElement(By.xpath("//*[@id='userRowTemplate' and @data-user='" + autoTestUserID + "']")).click();
+		driver.findElement(By.xpath("//*[@id='userRowTemplate' and @data-user='" + autoTestUserID + "']/td[7]/div/button[1]")).click();
+		logger.log(LogStatus.INFO, "Edit user detail button selected" + TestConstants.SUCCESS_ICON);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='editUserRow']/td[2]/div/input")).sendKeys("Zhang");
+		driver.findElement(By.xpath("//*[@id='editUserRow']/td[7]/button")).click();
+		logger.log(LogStatus.INFO, "Edited user detail saved, need to check with DB" + TestConstants.SUCCESS_ICON);
+		/*
+		 * Below is DB action
+		 */
+		try{
+			conn = DriverManager.getConnection("jdbc:mysql://192.168.1.23/vclass","root","hels2nk2");
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from users where name = 'AutoTestUser'");
+			if(rs.next()){
+			//	rs.next();
+				String updatedMail;
+				updatedMail = rs.getString("mail");
+				if(updatedMail.equals("AutoTestUser@BradZhang")){
+					logger.log(LogStatus.INFO, "Update User's email Successfully" + TestConstants.SUCCESS_ICON);
+				}
+				else{
+					logger.log(LogStatus.FAIL, "Update User's email Unsuccessfully" + TestConstants.FAIL_ICON);
+				}
+			}
+			else{
+				logger.log(LogStatus.FAIL, "Search DB Unsuccessfully After Update user's email address" + TestConstants.FAIL_ICON);
+			}
+			conn.close();
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		
 	}
 	
 	public static void AddAndDeleteUserToGroup(WebDriver driver, ExtentReports logger)
@@ -182,7 +250,7 @@ public class GroupTabService {
 			System.out.println(e.getMessage());
 		}
 		/*
-		 * from now on, first set user password and then delete user and group
+		 * from now on, first set user password?? and then delete user and group
 		 * 
 		 */
 		try{
@@ -192,10 +260,48 @@ public class GroupTabService {
 			driver.findElement(By.xpath("//*[@id='userRowTemplate' and @data-user='" + autoTestUserID + "']")).click();
 			driver.findElement(By.xpath("//*[@id='userRowTemplate' and @data-user='" + autoTestUserID + "']/td[7]/div/button[2]")).click();
 			logger.log(LogStatus.INFO, "Clicked pull down button" + TestConstants.SUCCESS_ICON);
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[@id='userRowTemplate']/td[7]/div/ul/li[1]/a[@data-user='" + autoTestUserID + "']")).click();
 			logger.log(LogStatus.INFO, "Clicked delete user button" + TestConstants.SUCCESS_ICON);
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[@id='deleteUserConfirmation']/td/div/div[3]/button")).click();
-			logger.log(LogStatus.INFO, "Clicked confirmed button delete user successfully" + TestConstants.SUCCESS_ICON);
+			logger.log(LogStatus.INFO, "Clicked confirmed button delete user successfully" + TestConstants.SUCCESS_ICON);	
+			//check the user has been deleted or not
+			conn = DriverManager.getConnection("jdbc:mysql://192.168.1.23/vclass","root","hels2nk2");
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from users where uid = '" + autoTestUserID + "'");
+			if(rs.next()){
+				logger.log(LogStatus.FAIL, "The user has not been deleted, Checked with the Database" + TestConstants.FAIL_ICON);
+			}
+			else{
+				logger.log(LogStatus.INFO, "the user has been deleted, Checked with the Database" + TestConstants.SUCCESS_ICON);
+				Thread.sleep(2000);
+			}
+			conn.close();
+			
+			/*
+			 * then need to delete the auto test group
+			 */
+			driver.findElement(By.xpath("//*[@id='groupsTabButton']/a")).click();
+			driver.findElement(By.xpath("//*[@id='groupRowTemplate' and @data-group='" + autoTestGroupID + "']")).click();
+			Thread.sleep(2000);
+			logger.log(LogStatus.INFO, "Auto Test Group Entry found" + TestConstants.SUCCESS_ICON);
+			driver.findElement(By.xpath("//*[@id='groupRowTemplate' and @data-group='" + autoTestGroupID + "']/td[6]/div/button[2]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id='groupRowTemplate' and @data-group='" + autoTestGroupID + "']/td[6]/div/ul/li/a")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id='deleteGroupConfirmation']/td/div/div[2]/button")).click();
+			conn = DriverManager.getConnection("jdbc:mysql://192.168.1.23/vclass","root","hels2nk2");
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("select * from groups where gid = '" + autoTestGroupID + "'");
+			if(rs.next()){
+				logger.log(LogStatus.FAIL, "The group has not been deleted, Checked with the Database" + TestConstants.FAIL_ICON);
+			}
+			else{
+				logger.log(LogStatus.INFO, "the group has been deleted, Checked with the Database" + TestConstants.SUCCESS_ICON);
+				Thread.sleep(2000);
+			}
+			conn.close();
 			
 		}catch(Exception e){
 			logger.log(LogStatus.FAIL, e.getMessage() + TestConstants.FAIL_ICON);

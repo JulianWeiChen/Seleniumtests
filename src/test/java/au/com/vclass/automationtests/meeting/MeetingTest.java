@@ -41,8 +41,8 @@ public class MeetingTest {
 		webDriver = initSrv.initialize(logger);
 		// Thread Wait
 		Thread.sleep(2000);
-		TestInitService.IAmReady(logger, webDriver);
-
+		//TestInitService.IAmReady(logger, webDriver);
+		
 		// Thread Wait
 
 		// Sign In with Valid Testing Account

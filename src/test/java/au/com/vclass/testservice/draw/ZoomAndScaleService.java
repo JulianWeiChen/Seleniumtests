@@ -98,12 +98,12 @@ public class ZoomAndScaleService {
 			elementSelector = driver.findElement(By.id("scaleSelectContainer"));
 			elementSelector.click();
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//option[contains(@value, 0.50)]"))
+			driver.findElement(By.xpath("//option[contains(@value, 0.75)]"))
 					.click();
-			logger.log(LogStatus.PASS, "Changed to 50% scale successfully"
+			logger.log(LogStatus.PASS, "Changed to 75% scale successfully"
 					+ TestConstants.SUCCESS_ICON);
 		} catch (Exception e) {
-			logger.log(LogStatus.FAIL, "Failed to choose 50% scale"
+			logger.log(LogStatus.FAIL, "Failed to choose 75% scale"
 					+ TestConstants.FAIL_ICON);
 		}
 
