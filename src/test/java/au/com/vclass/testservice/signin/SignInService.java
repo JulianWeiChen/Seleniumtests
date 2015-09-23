@@ -29,7 +29,12 @@ public class SignInService {
 			}
 			WebElement signinBtn = webDriver.findElement(By.id("signin_btn"));
 			signinBtn.click();
-			logger.log(LogStatus.INFO, "Sign In...");
+			logger.log(LogStatus.INFO, "Sign In..." + TestConstants.SUCCESS_ICON);
+			Thread.sleep(2000);
+			webDriver.findElement(By.xpath("//*[@id='helpTooltip']")).click();
+			Thread.sleep(1000);
+			webDriver.findElement(By.xpath("//*[@id='helpTooltipHeader']/button")).click();
+			logger.log(LogStatus.INFO, "Closed Welcome Tips" + TestConstants.SUCCESS_ICON);
 		} catch (Exception e) {
 			logger.log(LogStatus.ERROR, "Sign In Exception!"
 					+ TestConstants.FAIL_ICON

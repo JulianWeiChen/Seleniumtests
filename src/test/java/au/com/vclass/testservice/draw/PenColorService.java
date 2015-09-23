@@ -69,18 +69,17 @@ public class PenColorService {
 			logger.log(LogStatus.INFO, "Chose color picker");
 
 		} catch (Exception e) {
-			logger.log(LogStatus.FAIL, "Failed to choose color picker"
+			logger.log(LogStatus.FAIL, "Failed to choose color picker" + e.getLocalizedMessage()
 					+ TestConstants.FAIL_ICON);
 		}
 
 		Thread.sleep(2000);
 		try {
-			driver.findElement(
-					By.xpath("//div[contains(@class, 'colorPicker-swatch highLightColorPicker-swatch') and contains(@style, 'border-color: rgb(89, 143, 239)) and contains(@style, 'background-color: rgb(255, 0, 0)')]"))
-					.click();
+			//driver.findElement(By.xpath("//div[contains(@class, 'colorPicker-swatch highLightColorPicker-swatch') and contains(@style, 'border-color: rgb(89, 143, 239)) and contains(@style, 'background-color: rgb(255, 0, 0)')]")).click();
+			driver.findElement(By.xpath("//*[@id='colorPicker_palette-2']/div[13]")).click();
 			logger.log(LogStatus.INFO, "Chose pen color RED");
 		} catch (Exception e) {
-			logger.log(LogStatus.FAIL, "Failed to choose pen color RED"
+			logger.log(LogStatus.FAIL, "Failed to choose pen color RED" + e.getMessage()
 					+ TestConstants.FAIL_ICON);
 		}
 

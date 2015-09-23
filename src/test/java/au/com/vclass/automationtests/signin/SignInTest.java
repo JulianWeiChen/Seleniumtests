@@ -66,7 +66,7 @@ public class SignInTest {
 		webDriver = initSrv.initialize(logger);		
 		// Thread Wait
 		Thread.sleep(2000);		
-		TestInitService.IAmReady(logger, webDriver);
+		//TestInitService.IAmReady(logger, webDriver);
 
 		// Thread Wait
 		Thread.sleep(2000);
@@ -90,7 +90,7 @@ public class SignInTest {
 		webDriver = initSrv.initialize(logger);
 		// Thread Wait
 		Thread.sleep(2000);		
-		TestInitService.IAmReady(logger, webDriver);
+		//TestInitService.IAmReady(logger, webDriver);
 
 		// Thread Wait
 		Thread.sleep(2000);
@@ -129,7 +129,7 @@ public class SignInTest {
 		webDriver = initSrv.initialize(logger);
 		// Thread Wait
 		Thread.sleep(2000);		
-		TestInitService.IAmReady(logger, webDriver);
+		//TestInitService.IAmReady(logger, webDriver);
 		
 		// Thread Wait
 		Thread.sleep(2000);
